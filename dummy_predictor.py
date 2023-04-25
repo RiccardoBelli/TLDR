@@ -20,13 +20,15 @@ class DummyPredictor:
         ]
 
         self.keywords_science_futuristic = [
-            "physics", "astrophysics", "nuclear", "fusion", "plasma", "quantum", "energy", "nanotechnology",
-            "biotechnology", "genetics", "crispr", "synthetic", "biology", "medical", "device", "climate",
-            "environment", "astronomy", "space", "exploration", "satellite", "mars", "lunar", "moon", "telescope",
+            "science", "mathematics", "physics", "biology", "scientific studies",
+            "astronomy", "chemistry", "botany", "genetics", "zoology",
+            "physiology", "earth", "geology", "meteo", "ecology", "research",
+            "astrophysics", "nuclear", "fusion", "plasma", "quantum", "energy", "nanotechnology",
+            "biotechnology", "crispr", "synthetic", "medical", "device", "climate",
+            "environment", "space", "exploration", "satellite", "mars", "lunar", "moon", "telescope",
             "hubble", "rover", "dark", "matter", "artificial", "intelligence", "neural", "network", "deep", "learning",
             "machine", "superconductor", "battery", "solar", "wind", "power", "transmission", "wireless", "infrared",
             "laser", "optical", "semiconductor", "material", "3d", "printing", "graphene", "carbon", "nanotube",
-            "material", 
         ]
 
         self.keywords_programming_design = [
@@ -34,7 +36,8 @@ class DummyPredictor:
             "CSS", "HTML", "utility", "framework", "React", "web application", "DevOps",
             "API", "SDK", "chat", "activity feeds", "Python", "command-line", "JSON",
             "parsing", "software", "developer", "programming", "data science", "machine learning",
-            "GitHub", "repo", "web development", "design"
+            "GitHub", "repo", "web development", "design", "repository", "tool", "js", "javascript",
+            "java", "c++", "c#", "data", "git", "sql", "db"
         ]
 
     def predict(self, sentence):
