@@ -2,12 +2,12 @@ from enum import Enum
 
 
 class Category(Enum):
-    BIG_TECH = "BIG TECH & STARTUPS"
-    SCIENCE_FUTURISTIC_TECH = "SCIENCE & FUTURISTIC TECHNOLOGY"
-    PROGRAMMING_DESIGN_DATA_SCIENCE = "PROGRAMMING, DESIGN & DATA SCIENCE"
+    BIG_TECH = ("Big Tech & Startups", 0)
+    SCIENCE_FUTURISTIC_TECH = ("Science & Futuristic Technology", 1)
+    PROGRAMMING_DESIGN_DATA_SCIENCE = ("Programming, Design & Data Science", 2)
 
     def __repr__(self):
-        return f"{self.value}"
+        return f"{self.value[0]}"
 
 
 class DummyPredictor:
@@ -47,9 +47,14 @@ class DummyPredictor:
             (Category.PROGRAMMING_DESIGN_DATA_SCIENCE, self._get_score(sentence, self.keywords_programming_design))
         ]
 
-        return scores
+        return max(scores, key=lambda x: x[1])[0]
 
     @staticmethod
     def _get_score(sentence, keywords):
         count = sum([1 for keyword in keywords if keyword.lower() in sentence.lower()])
         return count / len(keywords)
+
+    def evaluate(self, test_data):
+        predicted_categories = [self.predict(sentence).value[1] for sentence in test_data]
+
+        return predicted_categories
